@@ -1,0 +1,58 @@
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column-left {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.column-left div {display: flex;}
+.column-left p {padding-right: 10px;}
+.column-right {
+  float: left;
+  width: 85%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+
+
+<h2>Two Equal Columns</h2>
+
+<div class="row">
+  <div class="column-left" style="background-color:#aaa;">
+    <h2>Column 1</h2>
+    <div>
+      <p>2000</p>
+      <p>2001</p>
+      <p>2002</p>
+      <p>2003</p>
+      <p>2003</p>
+      <p>2003</p>
+      <p>2003</p>
+      <p>2003</p>
+    </div>
+    
+  </div>
+  <div class="column-right" style="background-color:#bbb;">
+    <h2>Column 2</h2>
+    <p>Some text..</p>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
