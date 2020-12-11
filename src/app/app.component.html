@@ -1,58 +1,210 @@
-
 <style>
-* {
-  box-sizing: border-box;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-/* Create two equal columns that floats next to each other */
-.column-left {
-  float: left;
-  width: 15%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
+  body {
+    background-color: darkgray;
+    margin: 0px;
+  }
 
-.column-left div {display: flex;}
-.column-left p {padding-right: 10px;}
-.column-right {
-  float: left;
-  width: 85%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
+  .container {
+    width: 100%;
+    background: grey;
+  }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+  nav,
+  section {
+    float: left;
+    padding: 20px;
+    min-height: 170px;
+    box-sizing: border-box;
+  }
+
+  nav {
+    width: 19%;
+    background: white;
+    padding: 5px;
+    margin: 5px;
+  }
+  section {
+    width: 80%;
+    padding-top: 30px;
+  }
+
+  /* .clearfix{
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  } */
+
+  nav p {
+    margin: auto;
+    border-bottom: 1px solid;
+    width: 120px;
+    text-align: center;
+  }
+
+  nav ul {}
+
+  nav li {
+    display: inline-block;
+    width: 40%;
+    background: green;
+    padding: 5px;
+    text-align: center;
+    margin: 2px;
+    border-radius: 5px;
+  }
+
+  
+
+  section .col {
+    width: 20%;
+    min-height: 300px;;
+    background: white;
+    border: 1px solid;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  footer{text-align: center;padding: 5px;}
 </style>
 
 
+<div class="container ">
+  <header>
+    <h1>Space X Launch Programs</h1>
+  </header>
+  <div class="wrapper clearfix">
+    <nav>
+      <p>Launch year</p>
+      <ul>
+        <li>
+          2006
+        </li>
+        <li>
+          2007
+        </li>
 
-<h2>Two Equal Columns</h2>
+        <li>
+          2008
+        </li>
+        <li>
+          2009
+        </li>
+        <li>
+          2010
+        </li>
+        <li>
+          2011
+        </li>
+        <li>
+          2012
+        </li>
+        <li>
+          2013
+        </li>
+        <li>
+          2014
+        </li>
+        <li>
+          2015
+        </li>
+        <li>
+          2016
+        </li>
+        <li>
+          2017
+        </li>
+        <li>
+          2018
+        </li>
+        <li>
+          2019
+        </li>
+        <li>
+          2020
+        </li>
+      </ul>
+      <p>Sucessful Launch </p>
+      <ul>
+        <li>
+          True
+        </li>
+        <li>
+          False
+        </li>
 
-<div class="row">
-  <div class="column-left" style="background-color:#aaa;">
-    <h2>Column 1</h2>
-    <div>
-      <p>2000</p>
-      <p>2001</p>
-      <p>2002</p>
-      <p>2003</p>
-      <p>2003</p>
-      <p>2003</p>
-      <p>2003</p>
-      <p>2003</p>
-    </div>
-    
+
+      </ul>
+
+      <p>Sucessful Landing </p>
+      <ul>
+        <li>
+          True
+        </li>
+        <li>
+          False
+        </li>
+
+
+      </ul>
+    </nav>
+
+    <section>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+      <div class="col">
+        <div class="content">content</div>
+      </div>
+
+    </section>
+
   </div>
-  <div class="column-right" style="background-color:#bbb;">
-    <h2>Column 2</h2>
-    <p>Some text..</p>
-  </div>
+
+
+  <router-outlet></router-outlet>
+
+  <footer>
+    copyright@2020
+  </footer>
+
 </div>
-
-
-<router-outlet></router-outlet>
