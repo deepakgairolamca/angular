@@ -1,0 +1,71 @@
+<!-- <p>space-list works!</p>
+<div class="loader" *ngIf="loader"></div>
+<ul>
+    <li *ngFor="let item of spaceData; let i = index">
+        {{i}} {{item.mission_name}}
+    </li>
+</ul>
+<button (click)=loadMore(pageNo)>Load More</button>
+<button (click)=filter(100,true,null,null)>success Launch true</button>
+<button (click)=filter(100,false,null,null)>success Launch false</button>
+<button (click)=filter(100,true,true,null)>success Landing true</button>
+<button (click)=filter(100,null,false,null)>success Landing false</button>
+<button (click)=filter(100,true,true,2014)>Launch Year</button> -->
+
+<div class="container ">
+    <header>
+        <h1>Space X Launch Programs</h1>
+    </header>
+    <div class="loader" *ngIf="loader"></div>
+    <div class="wrapper clearfix">
+        <nav>
+            <p>Launch year</p>
+            <ul>
+                <li *ngFor="let year of years; let i = index" (click)=filter(100,true,true,year)>
+                    {{year}}
+                </li>
+
+            </ul>
+            <p>Sucessful Launch </p>
+            <ul>
+                <li (click)=filter(100,true,null,null)>
+                    True
+                </li>
+                <li (click)=filter(100,false,null,null)>
+                    False
+                </li>
+            </ul>
+            <p>Sucessful Landing </p>
+            <ul>
+                <li (click)=filter(100,true,true,null)>
+                    True
+                </li>
+                <li (click)=filter(100,null,false,null)>
+                    False
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <p class="errorbox" *ngIf="spaceData.length === 0">No Record Found</p>
+            <div *ngIf="spaceData.length > 0">
+
+                <div class="col" *ngFor="let item of spaceData; let i = index">
+
+                    <img src="{{item.links.mission_patch_small}}" alt="" width="150px">
+                    <div class="content">
+                        <p class="mission-name">{{item.mission_name}} #{{item.flight_number}}</p>
+                        <p><span>Mission Ids :</span> {{item.mission_id}}</p>
+                        <p><span>Launch year :</span> {{item.launch_year}}</p>
+                        <p><span>Successful Launch  :</span> {{item.launch_success}}</p>
+                        <p><span>Successful Landing  :</span> {{item.rocket.first_stage.cores[0].land_success}}</p>
+                    </div>
+                </div>
+                <button (click)=loadMore(pageNo)>Load More</button>
+            </div>
+        </section>
+    </div>
+    <footer>
+        copyright@2020
+    </footer>
+
+</div>
